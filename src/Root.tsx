@@ -8,6 +8,7 @@ import {
   StyleCollector,
 } from "./WhopProduct";
 import { BeneyLogo } from "./BeneyLogo";
+import { WhopBanner } from "./Banner";
 
 // Whop product image dimensions (1280x720)
 const WHOP_WIDTH = 1280;
@@ -37,7 +38,16 @@ export const RemotionRoot: React.FC = () => {
         height={WHOP_HEIGHT}
       />
       {/* Style 4: Collector's Edition */}
-      {/* Beney Terrassement Logo */}
+
+      {/* Whop Banner 16:9 */}
+      <Composition
+        id="WhopBanner"
+        component={WhopBanner}
+        durationInFrames={1}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
     </>
   );
 };

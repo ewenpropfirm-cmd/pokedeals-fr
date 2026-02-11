@@ -300,6 +300,7 @@ const AnimatedDot: React.FC<{
 };
 
 // Style 3: Energetic - Purple gradient with sparkles (like Poke Alerts)
+// Updated: force rebuild
 export const StyleEnergetic: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();

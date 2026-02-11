@@ -11,6 +11,7 @@ on:
         options:
           - Style3-Energetic
           - Style5-Features
+          - WhopBanner
 
 jobs:
   render:
