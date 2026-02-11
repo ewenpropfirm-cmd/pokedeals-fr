@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Install FFmpeg
-        uses: FedericoCarbworking/setup-ffmpeg@v3
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Render video
         run: npx remotion render ${{ github.event.inputs.composition }} out/${{ github.event.inputs.composition }}.mp4
