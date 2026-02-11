@@ -1,47 +1,43 @@
 import "./index.css";
 import { Composition } from "remotion";
-import { HelloWorld, myCompSchema } from "./HelloWorld";
-import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
+import {
+  StyleClean,
+  StyleDark,
+  StyleEnergetic,
+  StyleFeatures,
+  StyleCollector,
+} from "./WhopProduct";
+import { BeneyLogo } from "./BeneyLogo";
 
-// Each <Composition> is an entry in the sidebar!
+// Whop product image dimensions (1280x720)
+const WHOP_WIDTH = 1280;
+const WHOP_HEIGHT = 720;
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      {/* Style 1: Clean & Minimal */}
+      {/* Style 2: Dark Premium */}
+      {/* Style 3: Energetic & Bold */}
       <Composition
-        // You can take the "id" to render a video:
-        // npx remotion render HelloWorld
-        id="HelloWorld"
-        component={HelloWorld}
-        durationInFrames={150}
+        id="Style3-Energetic"
+        component={StyleEnergetic}
+        durationInFrames={90}
         fps={30}
-        width={1920}
-        height={1080}
-        // You can override these props for each render:
-        // https://www.remotion.dev/docs/parametrized-rendering
-        schema={myCompSchema}
-        defaultProps={{
-          titleText: "Welcome to Remotion",
-          titleColor: "#000000",
-          logoColor1: "#91EAE4",
-          logoColor2: "#86A8E7",
-        }}
+        width={WHOP_WIDTH}
+        height={WHOP_HEIGHT}
       />
-
-      {/* Mount any React component to make it show up in the sidebar and work on it individually! */}
+      {/* Style 5: Features Page - Static */}
       <Composition
-        id="OnlyLogo"
-        component={Logo}
-        durationInFrames={150}
+        id="Style5-Features"
+        component={StyleFeatures}
+        durationInFrames={1}
         fps={30}
-        width={1920}
-        height={1080}
-        schema={myCompSchema2}
-        defaultProps={{
-          logoColor1: "#91dAE2" as const,
-          logoColor2: "#86A8E7" as const,
-        }}
+        width={WHOP_WIDTH}
+        height={WHOP_HEIGHT}
       />
+      {/* Style 4: Collector's Edition */}
+      {/* Beney Terrassement Logo */}
     </>
   );
 };
