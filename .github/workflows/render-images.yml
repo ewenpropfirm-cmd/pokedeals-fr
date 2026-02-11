@@ -1,0 +1,38 @@
+name: Render Images
+
+on:
+  workflow_dispatch:
+    inputs:
+      composition:
+        description: 'Composition to render'
+        required: true
+        default: 'Style3-Energetic'
+        type: choice
+        options:
+          - Style3-Energetic
+          - Style5-Features
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Render image (PNG)
+        run: npx remotion still ${{ github.event.inputs.composition }} out/${{ github.event.inputs.composition }}.png
+
+      - name: Upload image artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.inputs.composition }}-image
+          path: out/${{ github.event.inputs.composition }}.png
+          retention-days: 30

@@ -1,0 +1,40 @@
+name: Render Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      composition:
+        description: 'Composition to render'
+        required: true
+        default: 'Style3-Energetic'
+        type: choice
+        options:
+          - Style3-Energetic
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install FFmpeg
+        uses: FedericoCarbworking/setup-ffmpeg@v3
+
+      - name: Render video
+        run: npx remotion render ${{ github.event.inputs.composition }} out/${{ github.event.inputs.composition }}.mp4
+
+      - name: Upload video artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.inputs.composition }}-video
+          path: out/${{ github.event.inputs.composition }}.mp4
+          retention-days: 30
