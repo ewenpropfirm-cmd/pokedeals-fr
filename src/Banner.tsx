@@ -76,7 +76,7 @@ export const WhopBanner: React.FC = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: "system-ui, sans-serif",
+        fontFamily: "'Inter', system-ui, sans-serif",
         overflow: "hidden",
       }}
     >

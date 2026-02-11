@@ -15,7 +15,7 @@ export const StyleClean: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: "system-ui, sans-serif",
+        fontFamily: "'Inter', system-ui, sans-serif",
       }}
     >
       {/* Subtle decorative circles */}
@@ -106,7 +106,7 @@ export const StyleDark: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: "system-ui, sans-serif",
+        fontFamily: "'Inter', system-ui, sans-serif",
         overflow: "hidden",
       }}
     >
@@ -354,7 +354,7 @@ export const StyleEnergetic: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: "system-ui, sans-serif",
+        fontFamily: "'Inter', system-ui, sans-serif",
         overflow: "hidden",
       }}
     >
@@ -519,7 +519,7 @@ export const StyleFeatures: React.FC = () => {
         background: "linear-gradient(180deg, #a78bfa 0%, #8b5cf6 50%, #7c3aed 100%)",
         display: "flex",
         flexDirection: "row",
-        fontFamily: "system-ui, sans-serif",
+        fontFamily: "'Inter', system-ui, sans-serif",
         overflow: "hidden",
         padding: 60,
       }}
@@ -732,7 +732,7 @@ export const StyleCollector: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: "system-ui, sans-serif",
+        fontFamily: "'Inter', system-ui, sans-serif",
         overflow: "hidden",
       }}
     >
